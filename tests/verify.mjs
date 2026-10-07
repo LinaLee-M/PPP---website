@@ -62,7 +62,7 @@ async function mount(data, hash = '') {
 const home = await mount(content);
 assert.equal(home.errors.length, 0);
 assert.match(home.document.querySelector('main').innerHTML, /06 SECTIONS/);
-assert.match(home.document.querySelector('main').innerHTML, /0 of 14 tasks complete/);
+assert.match(home.document.querySelector('main').innerHTML, /1 of 14 tasks complete/);
 assert.equal(home.document.querySelector('#brand-name').textContent, content.identity.name);
 const renamedContent = vm.runInNewContext(
   contentSource.replace('const GAME_NAME = "PPP";', 'const GAME_NAME = "New Adventure";') + '\nSITE_CONTENT;'

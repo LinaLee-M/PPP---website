@@ -339,7 +339,7 @@ const SITE_CONTENT = {
     },
     {
       label: "Directional idle & walk animations",
-      status: "unverified",
+      status: "done",
       group: "Foundations"
     },
     {
