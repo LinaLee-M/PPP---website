@@ -1,2 +1,52 @@
+# Local hosting and assistant configuration
+.openai/
 .sites-runtime/
+.codex/
+.agents/
+.github/
+
+# Credentials and private local settings
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+.aws/
+.ssh/
+.npmrc
+credentials.json
+secrets.json
+*.local
+*.local.*
+
+# Dependencies, caches, logs, and deployment archives
+node_modules/
+.cache/
+coverage/
+dist/
+build/
+_site/
+*.log
 *.tar.gz
+*.zip
+*.tmp
+*.bak
+*~
+
+# Editor and operating-system files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Website source, fonts, tests, README.md, and .github/ remain tracked.
+
+#author notes
+
+README.md

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202122">
+  <meta name="description" content="A growing wiki for an early Godot pixel-art game.">
+  <title>Game Wiki</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Classic scripts work offline. Content must load before the renderer. -->
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link pixel-button" href="#main">Skip to content</a>
+
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#home" aria-label="Wiki home">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span>
+        <span id="brand-name"></span>
+        <span class="brand-sub" id="brand-title"></span>
+      </span>
+    </a>
+    <nav id="navigation" aria-label="Wiki sections"></nav>
+    <div class="sidebar-bottom">
+      <div class="signal"><span class="signal-dot"></span> <span id="sidebar-stage"></span></div>
+      <p>A little world.<br>A work in progress.</p>
+      <button class="pixel-button small motion-toggle" type="button" aria-pressed="false">
+        PAUSE MOTION <span aria-hidden="true">Ⅱ</span>
+      </button>
+      <p class="micro-label">BUILT IN GODOT · DOCUMENTED HERE</p>
+    </div>
+  </aside>
+
+  <div class="workspace">
+    <header class="topbar">
+      <button class="menu-toggle pixel-button small" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+      <div class="breadcrumbs">ARCHIVE / <strong id="breadcrumb">HOME</strong></div>
+      <button class="search-trigger" type="button" aria-label="Search the wiki">
+        <span aria-hidden="true">⌕</span> Search <kbd>/</kbd>
+      </button>
+    </header>
+    <main id="main" tabindex="-1">
+      <noscript>Enable JavaScript to display the wiki.</noscript>
+    </main>
+    <footer class="footer">
+      <span id="footer-identity"></span>
+      <span id="footer-stage"></span>
+      <a href="#author">ABOUT THE AUTHOR ↗</a>
+    </footer>
+  </div>
+
+  <dialog id="article-dialog" class="pixel-dialog" aria-labelledby="article-title">
+    <div class="dialog-top">
+      <span id="article-type" class="micro-label">ARCHIVE ENTRY</span>
+      <button class="pixel-button small" data-close-dialog aria-label="Close article">✕</button>
+    </div>
+    <h2 id="article-title"></h2>
+    <div id="article-body" class="prose"></div>
+  </dialog>
+
+  <dialog id="search-dialog" class="pixel-dialog" aria-labelledby="search-label">
+    <div class="dialog-top">
+      <label id="search-label" for="search-input" class="micro-label">SEARCH THE ARCHIVE</label>
+      <button class="pixel-button small" data-close-dialog aria-label="Close search">✕</button>
+    </div>
+    <input type="search" id="search-input" placeholder="Lore, movement, biomes…" autocomplete="off">
+    <div id="search-results" aria-live="polite"></div>
+  </dialog>
+
+  <!-- One reusable card for every entry in the content lists. -->
+  <template id="entry-card-template">
+    <button type="button" class="entry-card panel">
+      <span class="card-top">
+        <span class="card-number"></span>
+        <span class="badge"></span>
+      </span>
+      <span class="card-icon" aria-hidden="true"></span>
+      <span class="card-title"></span>
+      <span class="card-description"></span>
+      <span class="card-bottom">OPEN ENTRY ↗</span>
+    </button>
+  </template>
+
+  <template id="checklist-template">
+    <li class="checklist-row">
+      <span class="check-indicator" aria-hidden="true"></span>
+      <span class="check-label"></span>
+      <span class="badge"></span>
+    </li>
+  </template>
+</body>
+</html>
